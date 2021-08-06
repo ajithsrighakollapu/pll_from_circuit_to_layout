@@ -229,7 +229,7 @@ design purpose
 in one file by using the .include command.
 
 For magic installation:
-- we can clone the magic repository by typing the command git clone git://opencircuitdesign.com/magic in the 
+- we can clone the magic repository by typing the command git clone **git://opencircuitdesign.com/magic** in the 
 terminal and install all the dependicies as well, Download the technology file also.
 
 
