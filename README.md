@@ -10,7 +10,8 @@
   -  [PLL Components](#PLLComponents)
   -  [circuit level functional block diagrams](#circuit_level_functional_blocks_of_PLL)
   -  [charge pump responses](#charge_pump_responses)
-  -  [Voltage controlled Oscillator](#VCO)
+  -  [phase_frequency_detectors](#Phase_Frequency_Detectors)
+  -  [Voltage controlled Oscillator](#Voltage_Controlled_Oscillator)
   
   
 # Overview
@@ -65,8 +66,53 @@ pump is
 - The main disadvantage of the charge pump is, it will get charged with leakage current also, without the presence 
 of up and down signals , we can improve its performance by additional circuits(including the current mirrors)
 
+# Phase_Frequency_Detectors
+- while desigining the PHASE FREQUENCY 
+DETECTOR we need to be very careful about the
+dead zone which is the very small difference 
+between the vref and vout signals 
+- In the phase frequency detector the down signal
+will get activated if leading the ref signal
+- In the same manner the up signal will get 
+activated if the out signal is lagging the ref signal
+- Here in the charge pump design we have added
+the RC series circuit in order to make the system 
+stable
+As we know 
+I=dq/dt
+and Q=CV
+so I=d(CV)/dT
+Hence 
+dV/dT=I/C
+- so total voltage across the charge pump will be 
+equal to V= integration from  time 0 to t(till the 
+operation of the of the charge pump) “t” can be 
+more than the time period.
+# State Diagram
+![](state_diagram.png)
+# Transfer Function Of The Charge Pump
+![](derivation1.png)
+# Transfer Fucntion Of The VCO
+![](derivation2.png)
 
-# VCO
+- Here on observing the transfer function 
+of charge pump with only a single 
+capacitor it includes a integrator in its T.F
+- And we know the transfer function of 
+VCO also had an integrator
+- so on observing the complete open 
+loop transfer function we will have S^2  
+in its denomination which explicitly says 
+the presence of oscillations(poles lies on 
+the y axis)means system is not completly   
+stable so in order to improve the stability 
+of the system we are placing the Series 
+RC combination at the 
+- The Cx value should be =C/10 to 
+achieve the higher stability.
+
+
+# Voltage_Controlled_Oscillator
 - The below diagram shows the ring oscillator
 - The time period of the ring oscillator with 3 inverters 
 is 6(delay of inverter)
@@ -77,4 +123,7 @@ current through the curent mirrors as the Ring oscillator
 is connected in the series circuit of the current mirror, the
 current through the ring oscillator determines the outout
 generated frequency
-
+## Ring Oscillator
+![](ring_oscillator.png)
+## Ring Oscillator with Starving Current circuit
+![](current_mirrors.png)
