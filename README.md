@@ -19,8 +19,8 @@
   -  [Tools,dependicies installation](#Tools_dependicies_installation)
   
 - [DAY 2: Designing the PLL using ngspice_layout design, extracting of paremeters_tapeout](#Day2)
-  -[spice file](#Spice_Files)
-
+  - [spice file](#Spice_Files)
+  - [Frequency_Divider_Module_Simulation_Results][#simulating_the_FD_module]
 
 
   
@@ -230,5 +230,48 @@ terminal and install all the dependicies as well, Download the technology file a
 - In spice file, first line is always a comment( eg: filename) always include the library file in the .cir file here we can define the new components for example (here the nmos is defined as xm1 3 2 1 1 sky130_fd_pr_pfet_01v8 (l=150n, w=420n)
 - we need to write the model name which is found in library files and we need to write the terminal pins which are (drain,gate,source,body) width and length of the mosfet 
 here we are working on 130nm technology so there will be some minimum limits as well for width and lengths
+
+![](code.png)
+
+# Important blocks in the code
+- Here .ic indicates the initial conditions
+- The .control block is used to keep the simulation instructions
+- The tran instruction is used to run the transcient analysis with the specified run time
+- Plot is used to plot the signals respectively
+- finally we need to end the control block
+
+![](block_code.png)
+
+# simulating_the_FD_module
+- After successfully writing the circuit file for the frequency divider we can simulate it using the command 
+ngspice filename.cir on the terminal.
+
+
+![](fss_sim.png)
+
+# frequency divider results
+- red is the output signal and blue is the input signal 
+
+# charge_pump_leakage_voltage_simulation_results
+![](charg_pump1.png)
+
+- Here we can see the charge pump voltage which is generated due to the leakage current. 
+- Here the voltage is in the range of uv and the time is in "us" 
+
+#  charge_pump_charging_voltage_simulation_results
+
+![](charge_pump2.png)
+- Charge pump responce when the up signal is given with improved stability and adding the current mirrors to the circuit
+- Here the voltage is in the range of uv and the time is in "us" 
+
+
+# VCO simulated results with supplying the reference voltage as VCO input
+
+![](vco_sim.png)
+- VCO full swing outputs for the reference voltage of 0.6V
+- In order to get the full swing output we need to add an inverter at the ouput of the VCO
+- As we know the VCO output frequency depends on the input voltage of the VCO
+
+
 
 
