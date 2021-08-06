@@ -12,7 +12,7 @@
   -  [charge pump responses](#charge_pump_responses)
   -  [phase_frequency_detectors](#Phase_Frequency_Detectors)
   -  [Voltage controlled Oscillator](#Voltage_Controlled_Oscillator)
-  -  [Important Definations Related To PLL:](#Important Definations Related To PLL:)
+  -  [Important Definations Related To PLL:](#Important_Definations_Related_To_PLL:)
   -  [Tool Setup](#Tool_Setup)
 
   
