@@ -21,6 +21,12 @@
 - [DAY 2: Designing the PLL using ngspice_layout design, extracting of paremeters_tapeout](#Day2)
   - [spice file](#Spice_Files)
   - [Frequency_Divider_Module_Simulation_Results][#simulating_the_FD_module]
+  - [Simulation_Results_Of_PLL](#Simulation_Results_Of_PLL)
+  - [Troubleshooting_steps](#Troubleshotting_steps)
+  - [layout_design](#layout_design)
+  - [Errors](#Errors)
+  - [Ports_and_Labels](#Ports_and_Labels)
+  - [Design_layout](#PLL_Layout)
 
 
   
@@ -242,6 +248,9 @@ here we are working on 130nm technology so there will be some minimum limits as 
 
 ![](block_code.png)
 
+
+
+
 # simulating_the_FD_module
 - After successfully writing the circuit file for the frequency divider we can simulate it using the command 
 ngspice filename.cir on the terminal.
@@ -271,6 +280,62 @@ ngspice filename.cir on the terminal.
 - VCO full swing outputs for the reference voltage of 0.6V
 - In order to get the full swing output we need to add an inverter at the ouput of the VCO
 - As we know the VCO output frequency depends on the input voltage of the VCO
+
+# Combining all the circuits
+
+- we can combine all the subcircuits in to the single file and we can run it
+- Initially we need to instantiate the subcircuits and then we also need to define the definations
+of the subcircuits even
+- we need to give the signal names also after instantiating the sub circuits which will match to the signals in the subckt defination
+- After attaching the subcircuits end the individual code block with .ends subckt name.
+![](ckts.png)
+
+# Simulation_Results_Of_PLL
+![](pll_simulation_results.png)
+
+
+# Troubleshotting_steps
+- Always debud the individual components 
+- If any of the output signal is not generating check the intermediate connections 
+- If the expected output is not generating check for like(net name, capitilization of units etc..)
+- If the difference in phase is reduced to few “ns”(dead zone) if the phase detector is not able to detect then it could lead the stability issue
+check for charging or discharging of the charge pump
+- We can also check the transfer function stability by using RH criteria 
+- Main objective is to have the poles of the system to the left side 
+
+# layout_design
+- Magic is the tool which is used for layout design and parasitic extraction
+- we can open the layout tool by entering the command magic- T sky130A.tech
+- we can even select the area on which we are going to draw our layout by selecting the region and we can also fill the materials required for the transistor to fill out by selecting the materials on the right.
+- In order to connect the components in other layers we need to add vias
+- we need to meet the design rule checkup’s in order to have a perfect design
+- we can also copy the design by drawing the box around it and by pressing the A buttoon to select it and move the cursor to the desired location and then press C button to place there, M button is used to move the design 
+![](magic_interface.png)
+
+# Errors
+- If we get the whitish DRC errors then there is a chances that  layer or the interconnect is small or very big
+- we need to satisfy all the design rule checks in order to obtain the desired results
+- Like some of the interconnects may not carry the high density currents because of the interconnect size  
+- There is a possibility of crosstalk or might be signal integrity issues or mismatch in the characteristic impedance 
+- We need to solve all the errors which we are getting in order to make the design work properly and we need to 
+give improvements as early as possible before fabricated design testing 
+- We need to satisfy the DC IR results also to make work the design with stable power supply
+
+# Ports_and_Labels
+- Label means it is justa name for the interconnect
+- We can create the label by drawing the box around the edge of the
+interconnect we can name it by entering the command label out
+- We can also make it a port by drawing the box around the labelled 
+interconnect and by typing the command port make.
+- We need to have ports for extracting the parasitics
+
+![](labels_ports.png)
+
+# PLL_Layout
+Type the command magic-T sky130A.tech filename.mag to view the layout of any design
+Here the PLL layout is shown
+
+![](pll_layout.png)
 
 
 
