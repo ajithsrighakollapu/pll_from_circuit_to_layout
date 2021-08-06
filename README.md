@@ -10,6 +10,7 @@
   -  [PLL Components](#PLLComponents)
   -  [circuit level functional block diagrams](#circuit_level_functional_blocks_of_PLL)
   -  [charge pump responses](#charge_pump_responses)
+  -  [Voltage controlled Oscillator(#VCO)
   
   
 # Overview
@@ -61,6 +62,19 @@ than the up signal then the voltage across the charge
 pump is
 ![](negative_chargepump.png)
 
--The main disadvantage of the charge pump is, it will get charged with leakage current also, without the presence 
+- The main disadvantage of the charge pump is, it will get charged with leakage current also, without the presence 
 of up and down signals , we can improve its performance by additional circuits(including the current mirrors)
+
+
+# VCO
+- The below diagram shows the ring oscillator
+- The time period of the ring oscillator with 3 inverters 
+is 6(delay of inverter)
+- By using the starving mechanism we are generating the 
+output frequency 
+-Initially the charge pump voltage is used to control the
+current through the curent mirrors as the Ring oscillator 
+is connected in the series circuit of the current mirror, the
+current through the ring oscillator determines the outout
+generated frequency
 
