@@ -48,7 +48,7 @@ phase and frequency distortions with respect to reference signal
 ## Frequency Divider Circuit
 ![](fdd1.png)
 
-#charge_pump_responses
+# charge_pump_responses
 ## Positive Charge Pump
 - If the average active time of the up signal is more 
 than the down signal then the voltage across the charge 
