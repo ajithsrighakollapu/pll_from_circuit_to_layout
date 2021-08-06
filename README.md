@@ -10,7 +10,7 @@
   -  [PLL Components](#PLLComponents)
   -  [circuit level functional block diagrams](#circuit_level_functional_blocks_of_PLL)
   -  [charge pump responses](#charge_pump_responses)
-  -  [Voltage controlled Oscillator(#VCO)
+  -  [Voltage controlled Oscillator](#VCO)
   
   
 # Overview
