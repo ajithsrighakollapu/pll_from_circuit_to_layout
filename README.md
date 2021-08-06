@@ -9,6 +9,7 @@
   -  [Introduction to PLL](#PLL)
   -  [PLL Components](#PLLComponents)
   -  [circuit level functional block diagrams](#circuit_level_functional_blocks_of_PLL)
+  -  [charge pump responses](#charge_pump_responses)
   
   
 # Overview
@@ -46,5 +47,18 @@ phase and frequency distortions with respect to reference signal
 ![](charge_pump1.png)
 ## Frequency Divider Circuit
 ![](fdd1.png)
+
+#charge_pump_responses
+## Positive Charge Pump
+- If the average active time of the up signal is more 
+than the down signal then the voltage across the charge 
+pump is 
+![](positive_Chargepump.png)
+
+## Negative Charge Pump
+- if the average active time of the down signal is more 
+than the up signal then the voltage across the charge 
+pump is
+![](negative_chargepump.png)
 
 
