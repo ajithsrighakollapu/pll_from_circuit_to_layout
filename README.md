@@ -61,4 +61,6 @@ than the up signal then the voltage across the charge
 pump is
 ![](negative_chargepump.png)
 
+-The main disadvantage of the charge pump is, it will get charged with leakage current also, without the presence 
+of up and down signals , we can improve its performance by additional circuits(including the current mirrors)
 
