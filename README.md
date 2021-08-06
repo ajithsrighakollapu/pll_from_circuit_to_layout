@@ -192,7 +192,7 @@ to run the file type: ngspice <circuit_file_name>
   - VCO mode(where the control voltage is given directly to the VCO pin)
   - The range of input frequencies for which the PLL should work Fmin=5MHz;
   - Fmax=12.5MHz
-  - Multiplier- 8X
+  - Multiplier- 8X.
   - jitter-20ns(which means the time difference between the signals).
 
 # Tools,dependicies_installation
