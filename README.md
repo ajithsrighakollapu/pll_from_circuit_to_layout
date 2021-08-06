@@ -14,6 +14,11 @@
   -  [Voltage controlled Oscillator](#Voltage_Controlled_Oscillator)
   -  [Important Definations Related To PLL:](#Important_Definations_Related_To_PLL:)
   -  [Tool Setup](#Tool_Setup)
+  -  [Development Flow](#Development_Flow)
+  -  [PDK’S AND Specifications](#PDK’s_and_Specifications)
+  -  [Tools,dependicies installation](#Tools,dependicies_installation)
+
+
 
   
   
@@ -132,7 +137,7 @@ generated frequency
 ![](current_mirrors.png)
 
 
-# Important Definations Related To PLL:
+# Important_Definations_Related_To_PLL:
 ## Lock in range:
 Once the PLL is locked, it can track the frequency change in the incoming signals. The range of frequencies over which the PLL can maintain the lock with incoming signal is called the lock-in range
 ## Capture range: 
@@ -155,7 +160,41 @@ to run the file type: ngspice <circuit_file_name>
 - To run the file type: magic -T  <technology_file_from_pdk> <circuit_file_name>
 
 
+# Development_Flow
+- specifications: mentioned by the client
+- spice-circuit level design: designing the circuit which is satisfying the specification mentioned by the client
+- pre layout simulations:checking the subcircuit level outputs and interconnecting them
+- layout development: developing the layout by satisfying the design rules 
+- parasitics extraction: in order to achieve the original behaviour of the design we need to simulate the design with parasitics , so here we are extracting the parasitics
+- post layout simulation: checking out design performance over the designed layout
+- Note: we need to do a lot of changes in the individual steps in order to meet the specifications
 
 
+# PDK’s_and_Specifications
+- All the informations about the trasistor like(area,configurations,parameter)  are available in the PDK kit
+- The pdk kit is just like ibis file in PCB level simulations
+- The characteristics of the transistor are available in this kit
+  - The pdk contains:
+  - io-input-output 
+  - pr-primitives(spice): we are using this in our PLL design
+  - sc-standard cells
+  - hd-high density
+  - hs-high speed
+  - lp-low power
+  - hdll- high density low leakage
+
+- specifications:
+  - corner -’TT’ (Typical-Typical) which 
+  - corresponds to doping
+  - corner -’FS’- fast nmos and slow pmos
+  - supply voltage -1.8v
+  - Room temparature
+  - VCO mode(where the control voltage is given directly to the VCO pin)
+  - The range of input frequencies for which the PLL should work Fmin=5MHz;
+  - Fmax=12.5MHz
+  - Multiplier- 8X
+  - jitter-20ns(which means the time difference between the signals).
+
+# Tools,dependicies_installation
 
 
