@@ -27,7 +27,7 @@ phase and frequency distortions with respect to reference signal
 
 ![](spectrum1.png)
 
-# PLL Components
+# PLLComponents
 - The main design components of the PLL are:
   - phase frequency detector
   - charge pump
