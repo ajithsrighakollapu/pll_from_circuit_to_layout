@@ -27,6 +27,12 @@
   - [Errors](#Errors)
   - [Ports_and_Labels](#Ports_and_Labels)
   - [Design_layout](#PLL_Layout)
+  - [ports extraction](#ports_extraction)
+  - [post layout simulation_combining the layouts and TAPE OUT](#post_layour_simulation_combining_the_layouts_Tapeout)
+  - [Acknowledgement](#Acknowledgement)
+
+
+
 
 
   
@@ -338,5 +344,35 @@ Here the PLL layout is shown
 ![](pll_layout.png)
 
 
+# ports_extraction
 
+- Type the command magic -T sky130A.tech filename.mag, now the layout will appear
+- Now press the I button to select the whole design and type extract all this will extract in to the .ext file
+- Now we need to convert the .ext file in to the spice file by typing ext2spice cthresh 0 rthresh 0, here the threshold values are given if any amount of capacitive or resistive effect is above there then extract them
+![](ports_extraction.png)
+
+-This the results which we are getting with additional parameters lists like area, peri etc of transistors, capacitance effects and the scale is also mentioned which is wrong by default, so we need to change the scale
+
+
+# post_layour_simulation_combining_the_layouts_Tapeout
+- After all the preprocessing steps and combining all the sub circuits and extracted ports data in to the sigle .cir file we need to keep the simulation which is the real time behaviour of the design
+- we can also combine all the layouts by interconnecting them using the interconnects connecting the VCO(supply pin ) to the analog pin
+
+![](tapeout.png)
+
+- Tape out means preparing our design and sending it to the fabrication.
+- we need to have the peripherals, memory, power supply pads etc...
+- so for all the preparatory steps we have predefined soc which is given by efabless caravel 
+- where the designer has to bother about placing the design over the soc and all the peripherals are interconnected over it 
+- The design coule be placed on the user project area and the connection pins could be made by 
+drawing the interconnects 
+- we need to be careful about the ESD which is one harm to the design, ESD diodes could be also placed in the design
+
+# Acknowledgement
+
+- Thank you  **Mr. Kunal Ghosh, co-founder VSD**, for  this wonderful 2-day workshop.
+- Special thanks to **Ms. Lakshmi S**, for guiding the workshop and sharing the great knowledge
+
+
+ 
 
