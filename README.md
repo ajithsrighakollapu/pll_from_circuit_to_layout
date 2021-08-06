@@ -28,7 +28,7 @@
   - [Ports_and_Labels](#Ports_and_Labels)
   - [Design_layout](#PLL_Layout)
   - [ports extraction](#ports_extraction)
-  - [post layout simulation_combining the layouts and TAPE OUT](#post_layour_simulation_combining_the_layouts_Tapeout)
+  - [post layout simulation_combining the layouts and TAPE OUT](#post_layout_simulation_combining_the_layouts_Tapeout)
   - [Acknowledgement](#Acknowledgement)
 
 
@@ -354,7 +354,7 @@ Here the PLL layout is shown
 -This the results which we are getting with additional parameters lists like area, peri etc of transistors, capacitance effects and the scale is also mentioned which is wrong by default, so we need to change the scale
 
 
-# post_layour_simulation_combining_the_layouts_Tapeout
+# post_layout_simulation_combining_the_layouts_Tapeout
 - After all the preprocessing steps and combining all the sub circuits and extracted ports data in to the sigle .cir file we need to keep the simulation which is the real time behaviour of the design
 - we can also combine all the layouts by interconnecting them using the interconnects connecting the VCO(supply pin ) to the analog pin
 
