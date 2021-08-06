@@ -196,6 +196,10 @@ to run the file type: ngspice <circuit_file_name>
   - jitter-20ns(which means the time difference between the signals).
 
 # Tools_dependicies_installation
+- To install ngspice type: sudo apt-get install ngspice on your terminal in ubuntu.
+- After installing the ngspice we need to download the sky130nm primitives which we are using in PLL design as shown below which is present in models folder.
+- The link for downloading the files is **https://github.com/google/skywater-pdk/tree/main/libraries**
+![](primitives.png)
 
 
 
