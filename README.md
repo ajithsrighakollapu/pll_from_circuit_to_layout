@@ -12,6 +12,9 @@
   -  [charge pump responses](#charge_pump_responses)
   -  [phase_frequency_detectors](#Phase_Frequency_Detectors)
   -  [Voltage controlled Oscillator](#Voltage_Controlled_Oscillator)
+  -  [Important Definations Related To PLL:](#Important Definations Related To PLL:)
+  -  [Tool Setup](#Tool_Setup)
+
   
   
 # Overview
@@ -127,3 +130,32 @@ generated frequency
 ![](ring_oscillator.png)
 ## Ring Oscillator with Starving Current circuit
 ![](current_mirrors.png)
+
+
+# Important Definations Related To PLL:
+## Lock in range:
+Once the PLL is locked, it can track the frequency change in the incoming signals. The range of frequencies over which the PLL can maintain the lock with incoming signal is called the lock-in range
+## Capture range: 
+The frequency range the PLL is able to lock-in from an unlocked state is called capture range
+## Settling time: 
+The time taken to attain the lock state from an unlocked state
+
+# Tool_Setup
+## npsice software
+- ngspice for transistor level circuit simulation
+- command to install ngspice: sudo apt-get install ngspice
+- ngspice directly simulates the circuit file and plots the outputs.
+- we need to download the sky130 primitive libraries considering the fact that PLL is designed for sky130nm mode
+to run the file type: ngspice <circuit_file_name>
+
+## magic software
+- Magic software is for layout design and parasitics extraction
+- Here we can modify and we can also extract the parasitics, GDS write features
+- We need the technology file for 130nm mode
+- To run the file type: magic -T  <technology_file_from_pdk> <circuit_file_name>
+
+
+
+
+
+
