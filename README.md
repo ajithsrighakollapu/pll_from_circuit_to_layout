@@ -12,11 +12,11 @@
   -  [charge pump responses](#charge_pump_responses)
   -  [phase_frequency_detectors](#Phase_Frequency_Detectors)
   -  [Voltage controlled Oscillator](#Voltage_Controlled_Oscillator)
-  -  [Important Definations Related To PLL:](#Important_Definations_Related_To_PLL:)
+  -  [Important Definations Related To PLL:](#Important_Definations_Related_To_PLL)
   -  [Tool Setup](#Tool_Setup)
   -  [Development Flow](#Development_Flow)
-  -  [PDK’S AND Specifications](#PDK’s_and_Specifications)
-  -  [Tools,dependicies installation](#Tools,dependicies_installation)
+  -  [PDK’S AND Specifications](#PDKs_and_Specifications)
+  -  [Tools,dependicies installation](#Tools_dependicies_installation)
 
 
 
@@ -137,7 +137,7 @@ generated frequency
 ![](current_mirrors.png)
 
 
-# Important_Definations_Related_To_PLL:
+# Important_Definations_Related_To_PLL
 ## Lock in range:
 Once the PLL is locked, it can track the frequency change in the incoming signals. The range of frequencies over which the PLL can maintain the lock with incoming signal is called the lock-in range
 ## Capture range: 
@@ -170,7 +170,7 @@ to run the file type: ngspice <circuit_file_name>
 - Note: we need to do a lot of changes in the individual steps in order to meet the specifications
 
 
-# PDK’s_and_Specifications
+# PDKs_and_Specifications
 - All the informations about the trasistor like(area,configurations,parameter)  are available in the PDK kit
 - The pdk kit is just like ibis file in PCB level simulations
 - The characteristics of the transistor are available in this kit
@@ -195,6 +195,7 @@ to run the file type: ngspice <circuit_file_name>
   - Multiplier- 8X.
   - jitter-20ns(which means the time difference between the signals).
 
-# Tools,dependicies_installation
+# Tools_dependicies_installation
+
 
 
