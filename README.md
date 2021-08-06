@@ -17,6 +17,8 @@
   -  [Development Flow](#Development_Flow)
   -  [PDK’S AND Specifications](#PDKs_and_Specifications)
   -  [Tools,dependicies installation](#Tools_dependicies_installation)
+ -[DAY 2: Designing the PLL using ngspice, layout design, extracting of paremeters, tapeout](#Day2)
+  -[spice file](#Spice_Files)
 
 
 
@@ -199,7 +201,33 @@ to run the file type: ngspice <circuit_file_name>
 - To install ngspice type: sudo apt-get install ngspice on your terminal in ubuntu.
 - After installing the ngspice we need to download the sky130nm primitives which we are using in PLL design as shown below which is present in models folder.
 - The link for downloading the files is **https://github.com/google/skywater-pdk/tree/main/libraries**
-![](primitives.png)
+![](primitives1.png)
 
+- Finally we need the spice file for the nfet
+which is available in the: cells/nfet_01v8
+- similarly find the pm3.spice files for the 
+pfet also
+
+![](required_files.png)
+
+- Finally we need all these files for our 
+design purpose
+- We can also combine all these files and 
+in one file by using the .include command.
+
+For magic installation:
+- we can clone the magic repository by typing the command git clone git://opencircuitdesign.com/magic in the 
+terminal and install all the dependicies as well, Download the technology file also.
+
+
+# Day2
+- The final Day is all about the design part of the PLL using the open source tools and tapeout of the design
+
+# Spice_Files
+- A spice file is just an extension with .cir or .spice
+- we can create the spice file by using the command **touch filename.cir**
+- In spice file, first line is always a comment( eg: filename) always include the library file in the .cir file here we can define the new components for example (here the nmos is defined as xm1 3 2 1 1 sky130_fd_pr_pfet_01v8 (l=150n, w=420n)
+- we need to write the model name which is found in library files and we need to write the terminal pins which are (drain,gate,source,body) width and length of the mosfet 
+here we are working on 130nm technology so there will be some minimum limits as well for width and lengths
 
 
